@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tell.me/pago"
+    xmlns:tns="http://tell.me/pago" elementFormDefault="qualified">
+
+    <element name="RealizarPagoRequest">
+        <complexType>
+            <sequence>
+                <element name="fecha" type="string"></element>
+                
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="RealizarPagoResponse">
+        <complexType>
+            <sequence>
+                <element name="id" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="BuscarPagosRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="BuscarPagosResponse">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+                <element name="fecha_" type="string"></element>
+                <element name="hora" type="string"></element>
+            </sequence>
+        </complexType> 
+    </element>
+
+    <element name="EliminarPagoRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+            </sequence>
+        </complexType>
+    </element>
+     
+    <element name="EliminarPagoResponse">
+        <complexType>
+            <sequence>  
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="SaludarResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="BuscarSaludosRequest">
+        <complexType/>
+    </element>
+    <element name="BuscarSaludosResponse">
+        <complexType>
+            <sequence>
+                <element name="Historial" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="id" type="int"></element>
+                            <element name="fecha" type="string"></element>
+                            <element name="hora" type="string"></element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    
+
+</schema>
